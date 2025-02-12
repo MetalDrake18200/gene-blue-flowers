@@ -1,0 +1,55 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Permite que `absolute` funcione bien */
+  }
+  
+  /* Contenedor de las letras */
+  #lyrics {
+    position: absolute;
+    top: 50%; /* Sube o baja las lyrics ajustando este valor */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.5s ease-in-out; /* Suaviza la aparición */
+}
+  
+  /* Título de la canción */
+  .titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    opacity: 1; /* Asegurar que inicie visible */
+    transition: opacity 90s ease-in-out; /* Suaviza el fade-out cuando se active */
+    position: absolute; 
+    top: 60%; /* Ajusta según necesites */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Se asegura de que esté delante */
+}
+
+  /* Animación de fade-in */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animación de fade-out */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
